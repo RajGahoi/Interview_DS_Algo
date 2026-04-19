@@ -53,6 +53,16 @@ public:
         return (firstMax-1)*(secondMax-1);
     }
 };
+//Approach-3 (By sorting - brute force )
+//T.C : O(nlogn)
+//S.C : O(1)
+class Solution {
+public:
+    int maxProduct(vector<int>& nums) {
+        sort(nums.begin(), nums.end(), greater<int>());
+        return (nums[0] - 1) * (nums[1] - 1);
+    }
+};
 
 
 
@@ -103,3 +113,19 @@ public class Solution {
         return (firstMax - 1) * (secondMax - 1);
     }
 }
+
+//Approach-3 (By sorting - brute force )
+//T.C : O(nlogn)
+//S.C : O(1)
+//In Java, Arrays.sort() gives ascending order only..here we can't use comprator
+import java.util.*;
+
+class Solution {
+    public int maxProduct(int[] nums) {
+        Arrays.sort(nums);  // ascending sort
+        
+        int n = nums.length;
+        return (nums[n-1] - 1) * (nums[n-2] - 1);
+    }
+}
+
